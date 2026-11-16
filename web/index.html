@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17201c">
+  <meta name="description" content="Find the names of obscure islands, isolated landings, old localities and other features on the official Canadian map.">
+  <title>Names That Time Forgot · CoolCode</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to search</a>
+  <header><div class="wrap mast"><a id="coolcode" class="brand" href="https://coolcode.ca/"><span class="logo-mark" aria-hidden="true">&gt;_</span>CoolCode.ca</a><a href="#about">Sources &amp; coverage ↓</a></div></header>
+  <section class="hero" aria-labelledby="title">
+    <div class="wrap hero-inner">
+      <div><p class="eyebrow">CANADIAN GEOGRAPHICAL NAME ATLAS</p><h1 id="title">Names That Time Forgot</h1><p>Find the names of obscure islands, isolated landings, old localities and other features on the official Canadian map.</p></div>
+      <div class="readout"><strong id="total">—</strong><span>geographical names</span></div>
+    </div>
+  </section>
+  <main id="explorer" class="wrap workspace">
+    <section class="panel search-panel" aria-label="Search tools">
+      <form role="search" id="search-form">
+        <label for="query">Search names, locations, feature types, or CGNDB IDs</label>
+        <div class="search-row"><input type="search" id="query" placeholder="Try Sable Island, landing, or a name in its original language" maxlength="180" autocomplete="off"><button type="button" id="clear">Clear</button></div>
+      </form>
+      <p class="hint">Matching is case and accent insensitive. Put words in quotes to keep them together.</p>
+      <div class="chips" id="choices" aria-label="Suggested searches"></div>
+      <div class="controls">
+        <label>Province, territory, or area<select id="group" disabled><option value="">All areas</option></select></label>
+        <label>Feature type<select id="type" disabled><option value="">All feature types</option></select></label>
+        <label>Sort results<select id="sort"><option value="best">Best match</option><option value="name">Name A–Z</option><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label>
+      </div>
+    </section>
+    <div class="columns">
+      <section aria-labelledby="result-title">
+        <div class="result-head"><div><h2 id="result-title">Name records</h2><p id="status" role="status">Reading the snapshot…</p></div></div>
+        <div id="records"></div>
+        <nav id="pages" aria-label="Results pages" hidden><button id="prev">← Previous</button><span id="page-info"></span><button id="next">Next →</button></nav>
+      </section>
+      <aside class="sidebar">
+        <section class="panel note" aria-label="Map"><h2>Map of results</h2><svg id="map" role="group" aria-label="Canadian map markers" viewBox="0 0 350 190"></svg><p id="map-caption">Search or choose a region to plot results.</p><p><small>Natural Earth public-domain map outlines.</small></p></section>
+        <section id="about" class="panel note">
+          <h2>What’s in the index</h2><p>Natural Resources Canada publishes the current officially approved geographical names in weekly CSV extracts. This index combines the national and undersea files and deduplicates records by CGNDB key.</p>
+          <p>A name or designation says nothing about the current condition, historical use, or accessibility of a place. Some historical naming terms in the government source may be offensive. The decision date describes the name, not when the feature came into use.</p>
+          <dl><dt>Built</dt><dd id="built">—</dd></dl>
+          <h2>Source downloads</h2>
+          <ul id="sources"></ul>
+          <a href="https://open.canada.ca/data/en/dataset/e27c6eba-3c5d-4051-9db2-082dc6411c2c">Official catalogue ↗</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <footer><div class="wrap"><span>Names That Time Forgot · Contains information licensed under the <a href="https://open.canada.ca/en/open-government-licence-canada/">Open Government Licence – Canada</a>.</span><a href="https://github.com/jsdyer/namesforget">Source code ↗</a></div></footer>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="detail-head"><div><h2 id="detail-title"></h2><p id="detail-meta" class="record-meta"></p></div><form method="dialog"><button aria-label="Close record">Close ×</button></form></div>
+    <dl class="fields" id="detail-fields"></dl>
+    <div class="actions" id="detail-actions"></div>
+    <p id="detail-status" class="hint" role="status"></p>
+  </dialog>
+</body>
+</html>
