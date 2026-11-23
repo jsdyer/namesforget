@@ -1,5 +1,9 @@
 # Names That Time Forgot
 
+<!-- coolcode:guide -->
+Choose a province, territory or undersea area and search a name, feature type or reference locality. Map points are published reference coordinates rather than boundaries or entrances; use the official lookup to investigate historical name status.
+<!-- /coolcode:guide -->
+
 A browser-only atlas of the current official geographical names maintained by Natural Resources Canada. Search by name, feature type, reference locality, government-assigned key, or language label. Filter by province, territory or undersea area, and open a record for source coordinates and naming information. The map shows plottable results on the current page. Its dots represent reference coordinates, not a feature boundary or directions to an entrance.
 
 The [Canadian Geographical Names catalogue](https://open.canada.ca/data/en/dataset/e27c6eba-3c5d-4051-9db2-082dc6411c2c) links to the [official weekly zipped CSV exports](https://ftp.maps.canada.ca/pub/nrcan_rncan/vector/geobase_cgn_toponyme/prov_csv_eng/). This app uses the English-labelled national and undersea releases, preserves original name spellings and syllabic forms, and deduplicates by CGNDB unique key. Use the official lookup to explore historical name status. Names in this snapshot do not establish historical or current abandonment. Natural Resources Canada warns that the source contains some offensive historical terminology.

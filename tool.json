@@ -1,0 +1,21 @@
+{
+  "id": "namesforget",
+  "title": "Names That Time Forgot",
+  "description": "Trace Canadian place names, features and their locations.",
+  "category": "places",
+  "tags": [
+    "geography",
+    "settlement",
+    "historical"
+  ],
+  "icon": "map-pin",
+  "url": "/namesforget/",
+  "source": "https://github.com/jsdyer/namesforget",
+  "hosting": "project",
+  "access": "browser",
+  "data_info": {
+    "mode": "snapshot",
+    "detail": "The Canadian Geographical Names Database supplies names for land and underwater features.",
+    "cadence": "Daily"
+  }
+}
