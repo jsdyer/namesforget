@@ -18,3 +18,11 @@ Open http://127.0.0.1:8000/. Python 3.11+ is used at build time. The runtime use
 GitHub Actions runs the official download and build on each deployment. The build writes compressed data shards grouped by area to `dist/data/`; visitors download only the needed area when a region is selected. The raw source ZIP and generated output stay outside Git. A failed download or malformed CSV stops deployment before replacing the previous site.
 
 Contains information licensed under the [Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada/). Source: Natural Resources Canada. Base map outlines are [public-domain Natural Earth data](https://www.naturalearthdata.com/about/terms-of-use/).
+
+<!-- schedule-reliability -->
+## Schedule reliability
+
+Public GitHub repositories can have scheduled workflows disabled after 60 days of inactivity. A separate weekly [schedule guard](.github/workflows/schedule-guard.yml) calls GitHub's enable-workflow API for an explicit list of refresh workflows and itself. It can restore workflows disabled for inactivity, preserves manually disabled workflows, and runs independently of collection failures.
+
+This is an interim mitigation, not a scheduling guarantee: GitHub does not document active-workflow renewal as a permanent exemption, and scheduled runs can be delayed or dropped. A scheduler on our own Linux server is the planned independent trigger. The guard does not collect data, create dummy commits, or change source/check timestamps; successful collection and published data freshness still need monitoring.
+<!-- /schedule-reliability -->
